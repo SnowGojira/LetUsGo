@@ -1,39 +1,55 @@
 package com.jiuxiao.zoubei.letusgo.ui;
 
-import android.support.v7.app.ActionBarActivity;
+import android.app.Activity;
 import android.os.Bundle;
-import android.view.Menu;
-import android.view.MenuItem;
+import android.util.Log;
+import android.view.View;
+import android.widget.Button;
+import android.widget.TextView;
+import android.widget.Toast;
 
 import com.jiuxiao.zoubei.letusgo.R;
+import com.jiuxiao.zoubei.letusgo.utils.CountDownHelper;
 
-public class LoginRegisterActivity extends ActionBarActivity {
+public class LoginRegisterActivity extends Activity {
+    private TextView mTvTitle;
+    private Button mBtnRegisterLogin;
+    private Button mBtnRegisterSendcode;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_login_register);
-    }
+        setContentView(R.layout.activity_login_registerandforget);
 
-    @Override
-    public boolean onCreateOptionsMenu(Menu menu) {
-        // Inflate the menu; this adds items to the action bar if it is present.
-        getMenuInflater().inflate(R.menu.menu_login_register, menu);
-        return true;
-    }
+        mTvTitle= (TextView) findViewById(R.id.tv_include_title);
+        mTvTitle.setText("注册");
+        mBtnRegisterLogin= (Button) findViewById(R.id.btn_register_login);
+        mBtnRegisterLogin.setText("注册");
 
-    @Override
-    public boolean onOptionsItemSelected(MenuItem item) {
-        // Handle action bar item clicks here. The action bar will
-        // automatically handle clicks on the Home/Up button, so long
-        // as you specify a parent activity in AndroidManifest.xml.
-        int id = item.getItemId();
+       mBtnRegisterSendcode= (Button) findViewById(R.id.btn_register_sendcode);
+        try{
+            mBtnRegisterSendcode.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    CountDownHelper helper = new CountDownHelper(mBtnRegisterSendcode,
+                            "发送验证码", 60, 1);
+                    helper.setOnFinishListener(new CountDownHelper.OnFinishListener() {
+                        @Override
+                        public void FinishThisFunction() {
+                            Toast.makeText(getApplicationContext(), "倒计时结束",
+                                    Toast.LENGTH_SHORT).show();
+                        }
+                    });
+                    helper.onStart();
+                }
+            });
+        }catch(Exception e){
+            Log.i("count down",e.toString());
 
-        //noinspection SimplifiableIfStatement
-        if (id == R.id.action_settings) {
-            return true;
         }
 
-        return super.onOptionsItemSelected(item);
+
     }
+
+
 }
