@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <!-- 天蓝 -->
+    <color name="Azure">#0099ff</color>
+    <!-- 白色-->
+    <color name="White">#ffffff</color>
+    <!-- 背景 灰色-->
+    <color name="BackGroud_Gray">#eaeaea</color>
+</resources>
