@@ -5,9 +5,8 @@
                 android:background="#f3f3f3"
     >
 
-    <include layout="@layout/include_titlebar"
-        android:id="@+id/layout"
-        ></include>
+    <include layout="@layout/include_titlebar"/>
+        
     <TextView
     android:id="@+id/tv_register_content"
         android:layout_marginTop="60dp"
