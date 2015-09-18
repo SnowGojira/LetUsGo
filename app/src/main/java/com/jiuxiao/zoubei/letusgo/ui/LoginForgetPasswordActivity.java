@@ -12,7 +12,7 @@ public class LoginForgetPasswordActivity extends ActionBarActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_forgetpassword_login);
+        setContentView(R.layout.activity_login__forgetpassword);
     }
 
     @Override

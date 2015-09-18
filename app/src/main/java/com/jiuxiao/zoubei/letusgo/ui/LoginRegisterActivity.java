@@ -12,7 +12,7 @@ public class LoginRegisterActivity extends ActionBarActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_register_login);
+        setContentView(R.layout.activity_login_register);
     }
 
     @Override
