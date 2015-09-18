@@ -11,7 +11,7 @@
         android:layout_height="100dp"
         android:layout_alignParentTop="true"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="70dp"
+        android:layout_marginTop="60dp"
         android:scaleType="fitXY"
         android:src="@drawable/ic_login"
         />
@@ -45,17 +45,128 @@
         android:inputType="textPassword"
         android:padding="15dp"
         android:textColor="@android:color/white"
-        android:textSize="18sp"/>
+        android:textColorHint="@android:color/white"
+        android:textSize="18sp"
+        />
 
     <Button
         android:id="@+id/btn_login"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="220dp"
+        android:layout_height="50dp"
         android:layout_below="@id/edt_password_login"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="20dp"
+        android:background="@drawable/btn_login_select"
         android:text="登陆"
-        android:textColor="@android:color/white"/>
+        android:textColor="@android:color/white"
+        android:textSize="19sp"/>
+
+
+    <TextView
+        android:id="@+id/tv_forgetpassword"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@id/btn_login"
+        android:layout_below="@+id/btn_login"
+        android:layout_marginLeft="20dp"
+        android:layout_marginTop="5dp"
+        android:gravity="left"
+        android:text="忘记密码"
+        android:textColor="@android:color/white"
+        android:textSize="15sp"
+        />
+
+    <TextView
+        android:id="@+id/tv_register"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignRight="@id/btn_login"
+        android:layout_below="@+id/btn_login"
+        android:layout_marginRight="20dp"
+        android:layout_marginTop="5dp"
+        android:gravity="right"
+        android:text="走呗注册"
+        android:textColor="@android:color/white"
+        android:textSize="15sp"/>
+
+    <Button
+        android:id="@+id/btn_visitor"
+        android:layout_width="220dp"
+        android:layout_height="50dp"
+        android:layout_below="@id/btn_login"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="50dp"
+        android:background="@drawable/btn_login_select"
+        android:text="先逛逛"
+        android:textColor="@android:color/white"
+        android:textSize="19sp"/>
+
+    <!--Divider-->
+    <LinearLayout
+        android:id="@+id/dividerline"
+        android:layout_width="240dp"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_below="@+id/btn_visitor"
+        android:layout_marginTop="20dp"
+        android:orientation="horizontal"
+        android:gravity="center_vertical">
+
+        <View
+            android:layout_width="0dp"
+            android:layout_height="1dp"
+            android:layout_weight="1"
+            android:background="#80ffffff"/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="使用社交账号"
+            android:gravity="center"
+            android:textColor="#80ffffff"/>
+        <View
+            android:layout_width="0dp"
+            android:layout_height="1dp"
+            android:layout_weight="1"
+            android:background="#80ffffff"/>
+
+
+
+
+    </LinearLayout>
+
+
+    <!-- the third party shared-->
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/dividerline"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="15dp"
+        android:orientation="horizontal"
+        android:padding="10dp">
+
+        <ImageButton
+            android:id="@+id/qq_login"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:background="@drawable/ic_qq_login"/>
+
+        <ImageButton
+            android:id="@+id/weibo_login"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:layout_marginLeft="20dp"
+            android:background="@drawable/ic_weibo_login"/>
+
+        <ImageButton
+            android:id="@+id/weixin_login"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:layout_marginLeft="20dp"
+            android:background="@drawable/ic_weixin_login"/>
+
+    </LinearLayout>
 
 
 </RelativeLayout>
