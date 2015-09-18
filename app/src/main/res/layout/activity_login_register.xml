@@ -5,144 +5,153 @@
                 android:background="#f3f3f3"
     >
 
-    <include layout="@layout/include_titlebar"/>
-        
+    <include
+        android:id="@+id/include_titlebar_login"
+        layout="@layout/include_titlebar"/>
+    <!--该textView在复用的时候设置visible的属性-->
     <TextView
-    android:id="@+id/tv_register_content"
+        android:id="@+id/tv_register_info_login"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/include_titlebar_login"
+        android:layout_centerHorizontal="true"
         android:layout_marginTop="60dp"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
         android:text="@string/register_text"
-        android:textSize="@dimen/forget_content_size"
-        android:layout_below="@+id/layout"
-        android:layout_centerHorizontal="true" />
+        android:textSize="16sp"/>
 
 
-     <!-- 输入手机号-->
+    <!-- 输入手机号-->
     <LinearLayout
-        android:layout_marginRight="20dp"
-        android:layout_marginLeft="20dp"
-        android:layout_marginTop="30dp"
-        android:layout_below="@+id/tv_register_content"
+        android:id="@+id/input_phone"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:orientation="horizontal"
+        android:layout_below="@+id/tv_register_info_login"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"
+        android:layout_marginTop="30dp"
         android:background="@drawable/bg_register_edit"
-        android:id="@+id/input_phone">
+        android:orientation="horizontal">
+
         <ImageView
-            android:layout_marginLeft="10dp"
-            android:layout_gravity="center"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginLeft="10dp"
             android:src="@drawable/ic_mail_login"
             />
+
         <EditText
             android:id="@+id/et_register_phone"
-            android:layout_marginLeft="10dp"
-            android:phoneNumber="true"
-            android:layout_gravity="center"
-            android:textSize="@dimen/forget_content_size"
-            android:hint="@string/register_phone"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:background="@null"/>
+            android:layout_gravity="center"
+            android:layout_marginLeft="10dp"
+            android:background="@null"
+            android:hint="@string/register_phone"
+            android:phoneNumber="true"
+            android:textSize="@dimen/forget_content_size"/>
 
     </LinearLayout>
 
     <!--验证码-->
     <RelativeLayout
-        android:layout_below="@+id/input_phone"
+        android:id="@+id/input_code"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_below="@+id/input_phone"
         android:orientation="horizontal"
-        android:id="@+id/input_code"
         >
 
-    <LinearLayout
-        android:layout_marginLeft="20dp"
-        android:layout_marginTop="10dp"
-
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        android:background="@drawable/bg_register_edit"
-        android:layout_toStartOf="@+id/btn_register_sendcode"
-        android:layout_alignParentEnd="false">
-        <ImageView
-            android:layout_marginLeft="10dp"
-            android:layout_gravity="center"
+        <LinearLayout
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:src="@drawable/ic_mail_login"
-            />
-        <EditText
-            android:id="@+id/et_register_code"
-            android:layout_marginLeft="10dp"
-            android:phoneNumber="true"
-            android:layout_gravity="center"
-            android:textSize="@dimen/forget_content_size"
-            android:hint="@string/register_code"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:background="@null"/>
-    </LinearLayout>
+
+            android:layout_alignParentEnd="false"
+            android:layout_marginLeft="20dp"
+            android:layout_marginTop="10dp"
+            android:layout_toStartOf="@+id/btn_register_sendcode"
+            android:background="@drawable/bg_register_edit"
+            android:orientation="horizontal">
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginLeft="10dp"
+                android:src="@drawable/ic_mail_login"
+                />
+
+            <EditText
+                android:id="@+id/et_register_code"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_gravity="center"
+                android:layout_marginLeft="10dp"
+                android:background="@null"
+                android:hint="@string/register_code"
+                android:phoneNumber="true"
+                android:textSize="@dimen/forget_content_size"/>
+        </LinearLayout>
+
         <Button
-            android:layout_marginRight="20dp"
             android:id="@+id/btn_register_sendcode"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:layout_marginRight="20dp"
+            android:background="@drawable/btn_register_code"
             android:gravity="center"
             android:text="@string/register_send_code"
             android:textSize="@dimen/forget_content_size"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:background="@drawable/btn_register_code"
-             android:layout_centerVertical="true"
-            android:layout_alignParentRight="true"
             />
 
     </RelativeLayout>
 
     <!--密码-->
     <LinearLayout
-        android:layout_marginRight="20dp"
-        android:layout_marginLeft="20dp"
-        android:layout_marginTop="10dp"
-        android:layout_below="@+id/input_code"
+        android:id="@+id/input_pwd"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:orientation="horizontal"
+        android:layout_below="@+id/input_code"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"
+        android:layout_marginTop="10dp"
         android:background="@drawable/bg_register_edit"
-        android:id="@+id/input_pwd">
+        android:orientation="horizontal">
+
         <ImageView
-            android:layout_marginLeft="10dp"
-            android:layout_gravity="center"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginLeft="10dp"
             android:src="@drawable/ic_password_login"
             />
+
         <EditText
             android:id="@+id/et_register_pwd"
-            android:layout_marginLeft="10dp"
-            android:layout_gravity="center"
-            android:textSize="@dimen/forget_content_size"
-            android:hint="@string/register_pwd"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:background="@null"/>
+            android:layout_gravity="center"
+            android:layout_marginLeft="10dp"
+            android:background="@null"
+            android:hint="@string/register_pwd"
+            android:textSize="@dimen/forget_content_size"/>
 
     </LinearLayout>
 
     <Button
         android:id="@+id/btn_register_finish"
-        android:layout_marginRight="40dp"
-        android:layout_marginLeft="40dp"
-        android:layout_below="@+id/input_pwd"
-        android:layout_marginTop="20dp"
-        android:textColor="@android:color/white"
-        android:textSize="@dimen/forget_content_size"
-        android:text="@string/register_btn_finish"
-        android:gravity="center"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_below="@+id/input_pwd"
+        android:layout_marginLeft="40dp"
+        android:layout_marginRight="40dp"
+        android:layout_marginTop="20dp"
         android:background="@drawable/btn_login_select"
+        android:gravity="center"
+        android:text="@string/register_btn_finish"
+        android:textColor="@android:color/white"
+        android:textSize="@dimen/forget_content_size"
         />
 </RelativeLayout>
