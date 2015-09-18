@@ -1,40 +1,62 @@
 package com.jiuxiao.zoubei.letusgo.ui;
 
+import android.app.Activity;
+import android.content.Intent;
 import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
+import android.widget.TextView;
 
 import com.jiuxiao.zoubei.letusgo.R;
 
 
-public class LoginMainActivity extends ActionBarActivity {
+public class LoginMainActivity extends Activity {
+    private TextView mTvForget;
+    private TextView mTvRegister;
+
+    private Intent mIntent = null;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login_main);
+
+        InitiVariebles();
+        /*
+        跳转到forget页面
+         */
+        StartActivity(mTvForget, LoginForgetPasswordActivity.class);
+        /*
+        跳转到register页面
+         */
+        StartActivity(mTvRegister, LoginRegisterActivity.class);
     }
 
-    @Override
-    public boolean onCreateOptionsMenu(Menu menu) {
-        // Inflate the menu; this adds items to the action bar if it is present.
-        getMenuInflater().inflate(R.menu.menu_login_main, menu);
-        return true;
+
+    /*
+          初始化变量
+     */
+    private void InitiVariebles() {
+        mTvForget = (TextView) findViewById(R.id.tv_forgetpassword);
+        mTvRegister = (TextView) findViewById(R.id.tv_register);
     }
 
-    @Override
-    public boolean onOptionsItemSelected(MenuItem item) {
-        // Handle action bar item clicks here. The action bar will
-        // automatically handle clicks on the Home/Up button, so long
-        // as you specify a parent activity in AndroidManifest.xml.
-        int id = item.getItemId();
+    /*
+      跳转页面的方法
+     */
 
-        //noinspection SimplifiableIfStatement
-        if (id == R.id.action_settings) {
-            return true;
-        }
-
-        return super.onOptionsItemSelected(item);
+    private void StartActivity(TextView textview, final Class target) {
+        textview.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                mIntent = new Intent(getApplicationContext(), target);
+                startActivity(mIntent);
+            }
+        });
     }
+
+
 }

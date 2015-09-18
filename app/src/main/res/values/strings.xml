@@ -6,6 +6,24 @@
     <string name="title_activity_login_register">Login Register Activity</string>
     <string name="title_activity_login_forget_password">Login ForgetPassword Activity</string>
 
+    <!--Login页面所用的字符-->
+    <string name="hint_mail_login">请输入手机号码</string>
+    <string name="login_main_password_hint">请输入6-12位密码</string>
+    <string name="login_main_login">登陆</string>
+    <string name="login_main_forget">忘记密码</string>
+    <string name="login_main_register">走呗注册</string>
+    <string name="login_main_visit">先逛逛</string>
+    <string name="login_main_3rdlogin">使用社交账号</string>
 
-    <string name="hint_mail_login">E-mail address</string>
+
+    <!--login 注册页面的字符-->
+    <string name="register_text">设置用于登录走呗的账号和密码</string>
+    <string name="common_back">返回</string>
+    <string name="register_phone">请输入手机号</string>
+    <string name="register_code">请输入验证码</string>
+    <string name="register_send_code">发送验证码</string>
+    <string name="register_pwd">请输入密码</string>
+    <string name="register_btn_finish">完成</string>
+
+
 </resources>

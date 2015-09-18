@@ -11,7 +11,7 @@
         android:layout_height="100dp"
         android:layout_alignParentTop="true"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="60dp"
+        android:layout_marginTop="50dp"
         android:scaleType="fitXY"
         android:src="@drawable/ic_login"
         />
@@ -46,6 +46,7 @@
         android:padding="15dp"
         android:textColor="@android:color/white"
         android:textColorHint="@android:color/white"
+        android:hint="@string/login_main_password_hint"
         android:textSize="18sp"
         />
 
@@ -57,7 +58,7 @@
         android:layout_centerHorizontal="true"
         android:layout_marginTop="20dp"
         android:background="@drawable/btn_login_select"
-        android:text="登陆"
+        android:text="@string/login_main_login"
         android:textColor="@android:color/white"
         android:textSize="19sp"/>
 
@@ -71,7 +72,7 @@
         android:layout_marginLeft="20dp"
         android:layout_marginTop="5dp"
         android:gravity="left"
-        android:text="忘记密码"
+        android:text="@string/login_main_forget"
         android:textColor="@android:color/white"
         android:textSize="15sp"
         />
@@ -85,7 +86,7 @@
         android:layout_marginRight="20dp"
         android:layout_marginTop="5dp"
         android:gravity="right"
-        android:text="走呗注册"
+        android:text="@string/login_main_register"
         android:textColor="@android:color/white"
         android:textSize="15sp"/>
 
@@ -97,7 +98,7 @@
         android:layout_centerHorizontal="true"
         android:layout_marginTop="50dp"
         android:background="@drawable/btn_login_select"
-        android:text="先逛逛"
+        android:text="@string/login_main_visit"
         android:textColor="@android:color/white"
         android:textSize="19sp"/>
 
@@ -121,7 +122,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:text="使用社交账号"
+            android:text="@string/login_main_3rdlogin"
             android:gravity="center"
             android:textColor="#80ffffff"/>
         <View
@@ -129,8 +130,6 @@
             android:layout_height="1dp"
             android:layout_weight="1"
             android:background="#80ffffff"/>
-
-
 
 
     </LinearLayout>
